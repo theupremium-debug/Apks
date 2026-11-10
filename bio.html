@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberar Key</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f7f8fa;
+    color: #171717;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 35px 18px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo {
+    width: 76px;
+    height: 76px;
+    border-radius: 22px;
+    background: #171717;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    margin: 0 auto 17px;
+}
+
+.profile h1 {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.profile p {
+    font-size: 13px;
+    color: #777;
+    margin-top: 8px;
+    line-height: 1.6;
+}
+
+.steps-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #777;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.step {
+    background: #fff;
+    border: 1px solid #eaecef;
+    border-radius: 15px;
+    padding: 19px;
+    margin-bottom: 13px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.number {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    background: #f1f2f4;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 2px 0 6px;
+}
+
+.step-content p {
+    font-size: 12px;
+    color: #858585;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    min-height: 43px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: .9;
+}
+
+.btn-youtube {
+    background: #171717;
+    color: #fff;
+}
+
+.btn-like {
+    background: #f1f2f4;
+    color: #171717;
+}
+
+.btn-key {
+    background: #2563eb;
+    color: white;
+}
+
+/* BOTÃO BLOQUEADO */
+.btn-key.disabled {
+    background: #aeb4bf;
+    opacity: .55;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+}
+
+/* BOTÃO LIBERADO */
+.btn-key.enabled {
+    background: #2563eb;
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.completed {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 11px;
+    color: #aaa;
+}
+
+.footer i {
+    margin-right: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="profile">
+        <div class="logo">
+            <i class="fa-solid fa-key"></i>
+        </div>
+
+        <h1>Liberação de Key</h1>
+        <p>Siga as etapas abaixo para liberar sua senha de acesso.</p>
+    </header>
+
+    <h2 class="steps-title">Como liberar sua senha</h2>
+
+    <!-- ETAPA 1 -->
+    <section class="step">
+        <div class="number" id="number1">01</div>
+
+        <div class="step-content">
+            <h3>Inscreva-se no YouTube</h3>
+            <p>Acesse nosso canal e inscreva-se para continuar.</p>
+
+            <a href="https://youtube.com/@app01ks?si=pr7raW65RWgOjdDN" target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-youtube"
+               onclick="concluirEtapa(1)">
+                <i class="fa-brands fa-youtube"></i>
+                INSCREVER-SE
+            </a>
+        </div>
+    </section>
+
+    <!-- ETAPA 2 -->
+    <section class="step">
+        <div class="number" id="number2">02</div>
+
+        <div class="step-content">
+            <h3>Curta o vídeo</h3>
+            <p>Deixe seu gostei no vídeo para apoiar nosso conteúdo.</p>
+
+            <a href="https://youtu.be/gzTwjfz4j50?is=S0IVr5xt6uClOFaQ" target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-like"
+               onclick="concluirEtapa(2)">
+                <i class="fa-solid fa-thumbs-up"></i>
+                DEIXAR LIKE
+            </a>
+        </div>
+    </section>
+
+    <!-- ETAPA 3 -->
+    <section class="step">
+        <div class="number" id="number3">03</div>
+
+        <div class="step-content">
+            <h3>Gerar sua Key</h3>
+            <p id="keyMessage">
+                Conclua as etapas 1 e 2 para liberar sua senha.
+            </p>
+
+            <a href="https://badge-free-everywhere.lovable.app/"
+               id="generateKey"
+               class="btn btn-key disabled"
+               aria-disabled="true"
+               onclick="return verificarKey(event)">
+                <i class="fa-solid fa-lock"></i>
+                GERAR KEY
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <i class="fa-solid fa-shield-halved"></i>
+        Sistema de liberação de acesso
+    </footer>
+
+</div>
+
+<script>
+const etapas = {
+    1: false,
+    2: false
+};
+
+function concluirEtapa(numero) {
+
+    etapas[numero] = true;
+
+    const indicador = document.getElementById('number' + numero);
+
+    indicador.innerHTML = '<i class="fa-solid fa-check"></i>';
+    indicador.classList.add('completed');
+
+    verificarEtapas();
+}
+
+function verificarEtapas() {
+
+    if (etapas[1] && etapas[2]) {
+
+        const botao = document.getElementById('generateKey');
+
+        botao.classList.remove('disabled');
+        botao.classList.add('enabled');
+
+        botao.setAttribute('aria-disabled', 'false');
+
+        botao.innerHTML =
+            '<i class="fa-solid fa-key"></i> GERAR KEY';
+
+        document.getElementById('keyMessage').innerText =
+            'Etapas concluídas! Sua senha está liberada.';
+    }
+}
+
+function verificarKey(event) {
+
+    if (!etapas[1] || !etapas[2]) {
+        event.preventDefault();
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+              </html>
+              
